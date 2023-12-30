@@ -1,0 +1,62 @@
+[
+    {
+        "booking_id": "1",
+        "child_id": "child1",
+        "icon": "star-of-life",
+        "reason": "Initialer Wert (JRK Leitung)",
+        "value": "1000",
+        "value_sign": "+",
+        "date": "2024-01-01",
+        "time": "10:00:01"
+    },
+    {
+        "booking_id": "2",
+        "child_id": "child2",
+        "icon": "star-of-life",
+        "reason": "Initialer Wert (JRK Leitung)",
+        "value": "1000",
+        "value_sign": "+",
+        "date": "2024-01-014",
+        "time": "10:00:01"
+    },
+    {
+        "booking_id": "3",
+        "child_id": "child3",
+        "icon": "star-of-life",
+        "reason": "Initialer Wert (JRK Leitung)",
+        "value": "1000",
+        "value_sign": "+",
+        "date": "2024-01-01",
+        "time": "10:00:01"
+    },
+    {
+        "booking_id": "4",
+        "child_id": "child4",
+        "icon": "star-of-life",
+        "reason": "Initialer Wert (JRK Leitung)",
+        "value": "1000",
+        "value_sign": "+",
+        "date": "2024-01-01",
+        "time": "10:00:01"
+    },
+    {
+        "booking_id": "5",
+        "child_id": "child1",
+        "icon": "carrot",
+        "reason": "Mittagessen",
+        "value": "25",
+        "value_sign": "-",
+        "date": "2024-01-01",
+        "time": "12:10:01"
+    },
+    {
+        "booking_id": "6",
+        "child_id": "child1",
+        "icon": "business-time",
+        "reason": "Arbeit (Job K\u00fcchenhilfe)",
+        "value": "10",
+        "value_sign": "+",
+        "date": "2024-01-01",
+        "time": "12:38:01"
+    }
+]

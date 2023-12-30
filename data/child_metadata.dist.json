@@ -1,0 +1,26 @@
+[
+    {
+        "child_id": "child1",
+        "firstname": "Jens",
+        "lastname": "Mrosek",
+        "uuid": "84ef5ff9-de28-4229-b759-762a8a49391d"
+    },
+    {
+        "child_id": "child2",
+        "firstname": "Wilhelmine",
+        "lastname": "Southers",
+        "uuid": "dae6d162-f454-4e91-8a9b-621f03c8b161"
+    },
+    {
+        "child_id": "child3",
+        "firstname": "Jessica",
+        "lastname": "Gerber",
+        "uuid": "dd7c13b3-a43c-4189-b7a3-97b0408ce5fe"
+    },
+    {
+        "child_id": "child4",
+        "firstname": "Nathalie",
+        "lastname": "Papp",
+        "uuid": "84a05793-de80-4053-b0c1-4b0a64dc83bd"
+    }
+]
