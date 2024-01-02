@@ -60,8 +60,9 @@ $balance  = $childBookingsHelper->getBookingsBalanceByChildId($child['child_id']
     <table class="table">
         <thead>
             <tr>
-                <th>Datum</th>
-                <th>Uhrzeit</th>
+                <th class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Datum</th>
+                <th class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell">Uhrzeit</th>
+                <th class="d-block d-sm-none">Zeit</th>
                 <th>Beschreibung</th>
                 <th>Wert</th>
                 <th>Aktionen</th>
@@ -70,8 +71,9 @@ $balance  = $childBookingsHelper->getBookingsBalanceByChildId($child['child_id']
         <tbody>
             <?php foreach ($bookings as $booking) : ?>
                 <tr class="table-<?php echo $booking['value_sign'] === '+' ? 'success' : 'danger'; ?>">
-                    <td><?php echo $booking['date'] ?></td>
-                    <td><?php echo $booking['time'] ?></td>
+                    <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"><?php echo $booking['date'] ?></td>
+                    <td class="d-none d-md-table-cell d-lg-table-cell d-xl-table-cell"><?php echo $booking['time'] ?></td>
+                    <td class="d-block d-sm-none"><?php echo $booking['date'] . ' ' . $booking['time'] ?></td>
                     <td><i class="fa-solid fa-<?php echo $booking['icon'] ?>"></i> <?php echo $booking['reason'] ?></td>
                     <td><span class="badge badge-<?php echo $booking['value_sign'] === '+' ? 'success' : 'danger'; ?>"><?php echo $booking['value_sign'] . '' . $booking['value'] ?></span></td>
                     <td>
