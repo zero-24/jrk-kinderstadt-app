@@ -5,7 +5,8 @@
         "canRead": "true",
         "canUpdate": "true",
         "canDelete": "true",
-        "isAdmin": "true"
+        "isAdmin": "true",
+        "expire": 1704264928
     },
     {
         "session_id": "79bd80b3-50e1-4c6d-a90f-1bf7400740e4",
@@ -13,6 +14,7 @@
         "canRead": "true",
         "canUpdate": "false",
         "canDelete": "false",
-        "isAdmin": "false"
+        "isAdmin": "false",
+        "expire": 1704264928
     }
 ]
