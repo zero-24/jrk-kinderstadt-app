@@ -18,6 +18,7 @@ The bookings are stored into the `data/child_bookings.json` and the child metada
 - `composer install --no-dev`
 - `cp data/child_bookings.dist.json data/child_bookings.json`
 - `cp data/child_metadata.dist.json data/child_metadata.json`
+- `cp data/session.dist.json data/session.json`
 
 ## Optional Setup
 ### Custom Favicon
