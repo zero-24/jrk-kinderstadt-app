@@ -230,6 +230,26 @@ class SessionHelper
     }
 
     /**
+     * Find and clean up sessions that have been expired
+     *
+     * @return  void
+     *
+     * @since   1.0
+     */
+    public function cleanUpSessions(): void
+    {
+        $sessions = $this->getSessions();
+
+        foreach ($sessions as $i => $session)
+        {
+            if (isset($session['expires']) && $session['expires'] < time())
+            {
+                $this->deleteSession($session['session_id']);
+            }
+        }
+    }
+
+    /**
      * Generate a new UUID v4
      *
      * @return  string
@@ -245,6 +265,7 @@ class SessionHelper
 
         // Set version to 0100
         $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+
         // Set bits 6-7 to 10
         $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
 

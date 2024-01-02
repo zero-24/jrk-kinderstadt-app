@@ -100,6 +100,9 @@ else
     $input->cookie->set(LOGIN_COOKIE_NAME, $sessionUUID, $cookieOptions);
 }
 
+// Clean up outdated sessions
+$sessionHelper->cleanUpSessions();
+
 $return = $input->getString('return', false);
 
 if ($return && in_array($return, $protectedActions))

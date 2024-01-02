@@ -31,6 +31,9 @@ if ($sessionValue !== null)
     $sessionValue = $input->cookie->set('jrk-kinderstadt-app-session', null, ['expires' => time() - 10000]);
 }
 
+// Clean up outdated sessions
+$sessionHelper->cleanUpSessions();
+
 // Redirect to the public page app
 header('Location: ../public/index.php');
 exit;
