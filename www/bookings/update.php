@@ -35,15 +35,7 @@ if (!$bookingId || !$booking)
     exit;
 }
 
-if ($input->getString('admin_secret', false) === ADMIN_SECRET)
-{
-    $isAdmin   = true;
-    $canCreate = true;
-    $canEdit   = true;
-    $canDelete = true;
-}
-
-if (!$canEdit)
+if (!$canUpdate)
 {
     // Redirect to the public page app
     header('Location: ../public/index.php');
@@ -76,9 +68,9 @@ if ($input->getMethod() === 'POST')
     if ($isValid)
     {
         $childBookingsHelper->editBooking($booking, $bookingId);
-        $child = $childMetadataHelper->getChildByid($booking['child_id']);
+        $child = $childMetadataHelper->getChildById($booking['child_id']);
 
-        header('Location: index.php?site_secret=' . SITE_SECRET . '&admin_secret=' . ADMIN_SECRET . '&uuid=' . $child['uuid']);
+        header('Location: index.php?site_secret=' . SITE_SECRET . '&uuid=' . $child['uuid']);
     }
 }
 

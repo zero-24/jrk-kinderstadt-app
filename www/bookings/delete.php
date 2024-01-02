@@ -29,16 +29,8 @@ $booking   = $childBookingsHelper->getBookingById($bookingId);
 // Check whether an valid booking has been send
 if (!$bookingId || !$booking)
 {
-    header('Location: index.php?site_secret=' . SITE_SECRET . '&admin_secret=' . ADMIN_SECRET . '&uuid=' . $child['uuid']);
+    header('Location: index.php?site_secret=' . SITE_SECRET . '&uuid=' . $child['uuid']);
     exit;
-}
-
-if ($input->getString('admin_secret', false) === ADMIN_SECRET)
-{
-    $isAdmin   = true;
-    $canCreate = true;
-    $canEdit   = true;
-    $canDelete = true;
 }
 
 if (!$canDelete)
@@ -48,7 +40,7 @@ if (!$canDelete)
     exit;
 }
 
-$child = $childMetadataHelper->getChildByid($booking['child_id']);
+$child = $childMetadataHelper->getChildById($booking['child_id']);
 $childBookingsHelper->deleteBookingById($bookingId);
 
-header('Location: index.php?site_secret=' . SITE_SECRET . '&admin_secret=' . ADMIN_SECRET . '&uuid=' . $child['uuid']);
+header('Location: index.php?site_secret=' . SITE_SECRET . '&uuid=' . $child['uuid']);

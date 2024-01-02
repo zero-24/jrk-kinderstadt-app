@@ -256,7 +256,7 @@ class ChildMetadataHelper
         $isValid = true;
 
         // Start of validation
-        if (!$child['child_id'] || ($type === 'create' && $this->getPointById($child['child_id'])))
+        if (!$child['child_id'] || ($type === 'create' && $this->getChildById($child['child_id'])))
         {
             $isValid = false;
             $errors['child_id'] = 'Child ID is mandatory and has to be unique';

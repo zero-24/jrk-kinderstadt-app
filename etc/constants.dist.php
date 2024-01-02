@@ -31,5 +31,13 @@ define('ICON_ARRAY_SUGGESTION', [
     'bread-slice' => 'Abendessen',
     'business-time' => 'Arbeit',
     'calendar-days' => 'Anwesenheit',
+    'money-check' => 'Überweisung',
+    'bag-shopping' => 'Einkaufen',
 ]);
 
+// Cookie Options
+define('LOGIN_COOKIE_NAME', '');
+define('COOKIE_DOMAIN', '');
+define('COOKIE_PATH', '');
+define('COOKIE_SECURE', true);
+define('COOKIE_EXPIRES', 43200);

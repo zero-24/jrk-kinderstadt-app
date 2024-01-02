@@ -110,9 +110,9 @@
                     </div>
                 </div>
                 <input type="hidden" name="site_secret" value="<?php echo SITE_SECRET ?>">
-                <input type="hidden" name="admin_secret" value="<?php echo ADMIN_SECRET ?>">
+                <input type="hidden" name="type" value="<?php echo $booking['type'] ? $booking['type'] : 'custom' ?>"">
                 <button type="submit" class="btn btn-success">Speichern</button>
-                <a class="btn btn-info" href="index.php?site_secret=<?php echo SITE_SECRET ?><?php echo $isAdmin === true ? '&admin_secret=' . ADMIN_SECRET : '' ?>&uuid=<?php echo $child['uuid'] ?>">Zurück</a>
+                <a class="btn btn-info" href="index.php?site_secret=<?php echo SITE_SECRET ?>&uuid=<?php echo $child['uuid'] ?>">Zurück</a>
             </form>
         </div>
     </div>

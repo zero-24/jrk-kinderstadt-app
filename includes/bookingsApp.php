@@ -19,6 +19,7 @@ require ROOT_PATH . '/vendor/autoload.php';
 use Joomla\Input;
 use zero24\Helper\ChildBookingsHelper;
 use zero24\Helper\ChildMetadataHelper;
+use zero24\Helper\SessionHelper;
 
 $input = new Input\Input;
 
@@ -32,9 +33,36 @@ $childMetadataHelper = new ChildMetadataHelper([
     'fileName' => 'child_metadata',
 ]);
 
+$sessionHelper = new SessionHelper([
+    'dataFolder' => ROOT_PATH . '/data',
+    'fileName' => 'session',
+]);
+
 // Initial Permission settings
-$isAdmin   = false;
-$canCreate = false;
-$canEdit   = false;
-$canDelete = false;
+$canCreate  = false;
+$canRead    = false;
+$canUpdate  = false;
+$canDelete  = false;
+$isAdmin    = false;
+$isLoggedIn = false;
+
+$sessionValue = $input->cookie->get('jrk-kinderstadt-app-session', false);
+
+if ($sessionValue)
+{
+    // Check whether the current session exists
+    $currentSession = $sessionHelper->getSessionById($sessionValue);
+
+    // In this case the current session is still valid
+    if ($currentSession && $currentSession['expire'] > time())
+    {
+        // Get the permissions from the current session
+        $canCreate  = $currentSession['canCreate'];
+        $canRead    = $currentSession['canRead'];
+        $canUpdate  = $currentSession['canUpdate'];
+        $canDelete  = $currentSession['canDelete'];
+        $isAdmin    = $currentSession['isAdmin'];
+        $isLoggedIn = true;
+    }
+}
 

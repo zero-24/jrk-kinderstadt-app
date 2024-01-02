@@ -36,16 +36,8 @@ if (!$bookingId || !$booking)
     exit;
 }
 
-if ($input->getString('admin_secret', false) === ADMIN_SECRET)
-{
-    $isAdmin   = true;
-    $canCreate = true;
-    $canEdit   = true;
-    $canDelete = true;
-}
-
 $balance = $childBookingsHelper->getBookingsBalanceByChildId($booking['child_id']);
-$child   = $childMetadataHelper->getChildByid($booking['child_id']);
+$child   = $childMetadataHelper->getChildById($booking['child_id']);
 
 ?>
 <?php include 'sites/header.php' ?>
@@ -96,14 +88,13 @@ $child   = $childMetadataHelper->getChildByid($booking['child_id']);
                 </tbody>
             </table>
             <div class="card-body">
-                <a class="btn btn-info" href="index.php?site_secret=<?php echo SITE_SECRET ?><?php echo $isAdmin === true ? '&admin_secret=' . ADMIN_SECRET : '' ?>&uuid=<?php echo $child['uuid'] ?>">Zurück</a>
-                <?php if($canEdit) : ?>
-                   <a class="btn btn-secondary" href="edit.php?site_secret=<?php echo SITE_SECRET ?>&admin_secret=<?php echo ADMIN_SECRET ?>&id=<?php echo $booking['booking_id'] ?>">Bearbeiten</a>
+                <a class="btn btn-info" href="index.php?site_secret=<?php echo SITE_SECRET ?>&uuid=<?php echo $child['uuid'] ?>">Zurück</a>
+                <?php if($canUpdate) : ?>
+                   <a class="btn btn-secondary" href="update.php?site_secret=<?php echo SITE_SECRET ?>&id=<?php echo $booking['booking_id'] ?>">Bearbeiten</a>
                 <?php endif; ?>
                 <?php if($canDelete) : ?>
                     <form class="inline-block" method="POST" action="delete.php">
                         <input type="hidden" name="site_secret" value="<?php echo SITE_SECRET ?>">
-                        <input type="hidden" name="admin_secret" value="<?php echo ADMIN_SECRET ?>">
                         <input type="hidden" name="id" value="<?php echo $booking['booking_id'] ?>">
                         <button class="btn btn-danger">Löschen</button>
                     </form>

@@ -11,6 +11,7 @@ composer.lock
 # Ignore local data files
 /data/child_bookings.json
 /data/child_metadata.json
+/data/session.json
 
 ## Ignore local favicons
 www/android-chrome-96x96.png
