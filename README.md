@@ -29,3 +29,12 @@ The bookings are stored into the `data/child_bookings.json` and the child metada
 ### UUID Generator
 
 [UUID Generator](https://www.uuidgenerator.net/)
+
+## Usage
+
+Child URL: `https://example.org/bookings/index.php?site_secret=<site_secret>&uuid=<uuid_of_child>`
+Teamer Login URL: `https://example.org/admin/login.php?site_secret=<site_secret>&admin_secret=<admin_secret>`
+
+Once a team member opens the Teamer/Admin URL there will be a "session" created which is stored within a cookie for an to be configured time.
+For the time configured and as long as the cookie is not deleted the teamer will get the action buttons to create and delete bookings.
+A new session can always be started with the Teamer URL, the teamer URL als extends the current cookie lifetime.
