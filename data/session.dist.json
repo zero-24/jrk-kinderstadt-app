@@ -1,17 +1,8 @@
 [
     {
-        "session_id": "2cb1fae9-d181-4e5d-9717-0398745f239e",
-        "canCreate": "true",
-        "canRead": "true",
-        "canUpdate": "true",
-        "canDelete": "true",
-        "isAdmin": "true",
-        "expire": 1704264928
-    },
-    {
         "session_id": "79bd80b3-50e1-4c6d-a90f-1bf7400740e4",
         "canCreate": "false",
-        "canRead": "true",
+        "canRead": "false",
         "canUpdate": "false",
         "canDelete": "false",
         "isAdmin": "false",
