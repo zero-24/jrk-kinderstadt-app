@@ -53,7 +53,7 @@ $balance  = $childBookingsHelper->getBookingsBalanceByChildId($child['child_id']
                 <a class="btn btn-success" href="create.php?site_secret=<?php echo SITE_SECRET ?>&child_id=<?php echo $child['child_id'] ?>&type=dinner">Abendessen</a>
             <?php endif ?>
             <?php if ($isLoggedIn) : ?>
-                <a class="btn btn-danger float-right" href="../admin/logout.php?site_secret=<?php echo SITE_SECRET ?>&admin_secret=<?php echo ADMIN_SECRET ?>">Abmelden</a>
+                <a class="btn btn-danger float-right" href="../admin/logout.php?site_secret=<?php echo SITE_SECRET ?>&admin_secret=<?php echo ADMIN_SECRET ?>&uuid=<?php echo $child['uuid'] ?>&return=bookings.index.uuid">Abmelden</a>
             <?php endif ?>
         </p>
     <?php endif ?>

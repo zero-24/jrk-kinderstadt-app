@@ -26,19 +26,7 @@ $sessionHelper = new SessionHelper([
     'fileName' => 'session',
 ]);
 
-$protectedActions = [
-    'bookings.create',
-    'bookings.delete',
-    'bookings.edit',
-    'bookings.index',
-    'bookings.view',
-    'childs.create',
-    'childs.delete',
-    'childs.edit',
-    'childs.index',
-    'childs.view',
+$allowedReturns = [
+    'bookings.index.uuid',
 ];
 
-$publicActions = [
-    'bookings.index',
-];

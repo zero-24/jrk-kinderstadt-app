@@ -103,11 +103,17 @@ else
 // Clean up outdated sessions
 $sessionHelper->cleanUpSessions();
 
-$return = $input->getString('return', false);
+$returnValue = $input->getString('return', false);
 
-if ($return && in_array($return, $protectedActions))
+if ($returnValue && in_array($returnValue, $allowedReturns))
 {
-    $returnParts = explode('.', $return);
+    $returnParts = explode('.', $returnValue);
+
+    if (count($returnParts) === 3)
+    {
+        header('Location: ../' . $returnParts[0] . '/' . $returnParts[1] . '.php?site_secret=' . SITE_SECRET . '&'. $returnParts[2] . '=' . $input->getString($returnParts[2], ''));
+        exit;
+    }
 
     header('Location: ../' . $returnParts[0] . '/' . $returnParts[1] . '.php?site_secret=' . SITE_SECRET);
     exit;
