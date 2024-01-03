@@ -51,5 +51,5 @@ if ($returnValue && in_array($returnValue, $allowedReturns))
 }
 
 // Redirect to the public page app
-header('Location: ../public/index.php');
+header('Location: ../public/loggedOut.php');
 exit;

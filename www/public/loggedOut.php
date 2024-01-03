@@ -29,7 +29,7 @@ header("content-security-policy: default-src 'self';");
     </head>
     <body>
         <div class="alert alert-info">
-            <h3>Du wurdest angemeldet, jetzt kannst du Kinder QR Codes lesen.</h3>
+            <h3>Du wurdest abgemeldet.</h3>
         </div>
     </body>
 </html>
